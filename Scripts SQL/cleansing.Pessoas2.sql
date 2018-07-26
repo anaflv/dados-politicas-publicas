@@ -1,4 +1,6 @@
-/****** Script for SelectTopNRows command from SSMS  ******/
+
+
+
 SELECT
 
 --top 1000
