@@ -3,7 +3,7 @@
 
 SELECT
 
---top 1000
+top 1000
 
 	 CASE [V0001]
 		WHEN '11' THEN 'Rondônia'
@@ -123,11 +123,11 @@ SELECT
 		WHEN '2' THEN 'Fundamental completo e médio incompleto'
 		WHEN '3' THEN 'Médio completo e superior incompleto'
 		WHEN '4' THEN 'Superior completo'
-		WHEN '5' THEN 'Não determinado				'
+		WHEN '5' THEN 'Não determinado'
 		ELSE ''
 		END											AS [NivelInstrucao]
 
 INTO [BancoDadosUFABC].[cleansing].[Pessoas2]
-FROM [BancoDadosUFABC].[cleansing].[Pessoas]
+FROM bd.[cleansing].[Pessoas]
 
 
