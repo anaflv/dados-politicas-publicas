@@ -1,9 +1,10 @@
 
 
+use bd
+
+DROP TABLE cleansing.Pessoas_PessoasFiltrado
 
 SELECT
-
-top 1000
 
 	 CASE [V0001]
 		WHEN '11' THEN 'Rondônia'
@@ -41,7 +42,7 @@ top 1000
 		WHEN '2' THEN 'Rural'
 		ELSE '' END									AS [SituacaoDomicilio]
 	
-	,TRY_CONVERT(INT,[V6036])						AS [Idade]
+	,CONVERT(INT,[V6036])							AS [Idade]
 
 	,CASE [V0606] WHEN '1' THEN  'Branca'
 		WHEN '2' THEN  'Preta'
@@ -127,7 +128,8 @@ top 1000
 		ELSE ''
 		END											AS [NivelInstrucao]
 
-INTO [BancoDadosUFABC].[cleansing].[Pessoas2]
-FROM bd.[cleansing].[Pessoas]
+INTO [cleansing].[Pessoas_PessoasFiltrado]
+FROM bd.[cleansing].[Pessoas_Original]
+WHERE [V0001] = 35
 
-
+-- (1216611 row(s) affected)
