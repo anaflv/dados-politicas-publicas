@@ -23,6 +23,10 @@ group by [Municipio], [Tipo Escola], [MunicipioID]
 order by 2
 ;
 
+select *
+from dm.NotasPorEscola_Avg
+order by Municipio
+
 
 SELECT
 COUNT(*) [Quantidade Escolas Publicas],
