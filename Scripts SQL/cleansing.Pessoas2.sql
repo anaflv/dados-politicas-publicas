@@ -36,6 +36,9 @@ SELECT
 		WHEN '53' THEN 'Distrito Federal'
 		ELSE 'N/A'
 		END										    AS [UnidadeFederacao]
+		
+	,[V0002]										AS [MunicipioiD]
+
 
 	,CASE [V1006]
 		WHEN '1' THEN 'Urbana'
