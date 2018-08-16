@@ -3,6 +3,7 @@ USE bd
 
 DROP TABLE dm.NotasPorEscola_Avg
 
+
 -- media de notas/escolas  
 SELECT 
  COUNT(*)				[Quantidade]
@@ -12,10 +13,22 @@ SELECT
 ,SUM([Nota CN])			[Média Nota CN]
 ,SUM([Nota Enem 2013])	[Média Nota Enem]
 ,SUM([Nota INSE AB])	[Média Nota INSE]
+,'São Paulo' [Estado]
 ,[Municipio]
+,[MunicipioID]
 ,[Tipo Escola]
 into dm.NotasPorEscola_Avg
 from  dw.Escolas
-group by [Municipio], [Tipo Escola]
+group by [Municipio], [Tipo Escola], [MunicipioID]
 order by 2
+;
+
+
+SELECT
+COUNT(*) [Quantidade Escolas Publicas],
+SUM([Nota Enem 2013]) [Nota Enem Escolas Publicas],
+[Municipio]
+from dw.Escolas
+WHERE [Tipo Escola] <> 'Privada'
+group by Municipio
 
